@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d018be551a702c0a96360169f3ad380",
+    "content-hash": "8d83802c112a498edbc8c66b46cc464d",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -370,26 +370,27 @@
     "packages-dev": [
         {
             "name": "bitexpert/phing-securitychecker",
-            "version": "v0.3.1",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bitExpert/phing-securitychecker.git",
-                "reference": "1c059c24af59ad12e50a56c5894ecf5d06eb01df"
+                "reference": "6f4c15ab4fa2b3c22f9b8b83d33ac1a739f11a81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bitExpert/phing-securitychecker/zipball/1c059c24af59ad12e50a56c5894ecf5d06eb01df",
-                "reference": "1c059c24af59ad12e50a56c5894ecf5d06eb01df",
+                "url": "https://api.github.com/repos/bitExpert/phing-securitychecker/zipball/6f4c15ab4fa2b3c22f9b8b83d33ac1a739f11a81",
+                "reference": "6f4c15ab4fa2b3c22f9b8b83d33ac1a739f11a81",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "phing/phing": "^2.8.0",
-                "php": "^7.0",
-                "sensiolabs/security-checker": "^4.0"
+                "php": "^7.1",
+                "sensiolabs/security-checker": "^5.0"
             },
             "require-dev": {
                 "phpdocumentor/phpdocumentor": "^2.8",
-                "phpunit/phpunit": "^6.0",
+                "phpunit/phpunit": "7.5",
                 "squizlabs/php_codesniffer": "^2.3"
             },
             "type": "library",
@@ -414,7 +415,7 @@
                 "Security Checker",
                 "phing"
             ],
-            "time": "2017-05-26T08:53:20+00:00"
+            "time": "2019-03-04T20:49:54+00:00"
         },
         {
             "name": "captainhook/plugin-composer",
@@ -1942,20 +1943,21 @@
         },
         {
             "name": "sensiolabs/security-checker",
-            "version": "v4.1.8",
+            "version": "v5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "dc270d5fec418cc6ac983671dba5d80ffaffb142"
+                "reference": "46be3f58adac13084497961e10eed9a7fb4d44d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/dc270d5fec418cc6ac983671dba5d80ffaffb142",
-                "reference": "dc270d5fec418cc6ac983671dba5d80ffaffb142",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/46be3f58adac13084497961e10eed9a7fb4d44d1",
+                "reference": "46be3f58adac13084497961e10eed9a7fb4d44d1",
                 "shasum": ""
             },
             "require": {
                 "composer/ca-bundle": "^1.0",
+                "php": ">=5.5.9",
                 "symfony/console": "~2.7|~3.0|~4.0"
             },
             "bin": [
@@ -1964,12 +1966,12 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "SensioLabs\\Security": ""
+                "psr-4": {
+                    "SensioLabs\\Security\\": "SensioLabs/Security"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1983,7 +1985,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2018-02-28T22:10:01+00:00"
+            "time": "2018-12-19T17:14:59+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
