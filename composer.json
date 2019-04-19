@@ -1,0 +1,42 @@
+{
+  "name": "bitexpert/captainhook-validateauthor",
+  "description": "Captain Hook Plugin to check if commit author is valid (e.g. email in whitelist)\n",
+  "type": "library",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Stephan Hochdörfer",
+      "email": "S.Hochdoerfer@bitExpert.de",
+      "homepage": "http://www.bitExpert.de"
+    }
+  ],
+  "require": {
+    "php": "^7.2.0",
+    "captainhook/captainhook": "^4.0"
+  },
+  "require-dev": {
+    "captainhook/plugin-composer": "^4.0",
+    "phpunit/phpunit": "^8.0",
+    "squizlabs/php_codesniffer": "^2.9.0",
+    "bitexpert/phing-securitychecker": "^0.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "bitExpert\\CaptainHook\\ValidateAuthor\\": "src/bitExpert/CaptainHook/ValidateAuthor"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "bitExpert\\CaptainHook\\ValidateAuthor\\": "tests/bitExpert/CaptainHook/ValidateAuthor"
+    }
+  },
+  "scripts": {
+    "check": [
+      "@cs-check",
+      "@test"
+    ],
+    "cs-check": "vendor/bin/phing sniff",
+    "cs-fix": "vendor/bin/phpcbf",
+    "test": "vendor/bin/phing unit"
+  }
+}
