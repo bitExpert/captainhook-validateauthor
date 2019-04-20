@@ -12,20 +12,26 @@
         </exec>
     </target>
 
-    <target name="lint">
-        <exec executable="php"
+    <target name="analyze">
+        <exec executable="./vendor/bin/phpstan"
               passthru="true"
               checkreturn="true">
-            <arg value="-l"/>
-            <arg path="${phing.dir}/src"/>
+            <arg value="analyze"/>
         </exec>
+    </target>
 
-        <exec executable="php"
-              passthru="true"
-              checkreturn="true">
-            <arg value="-l"/>
-            <arg path="${phing.dir}/tests"/>
-        </exec>
+    <target name="lint">
+        <phplint>
+            <fileset dir="${phing.dir}/src">
+                <include name="**/*.php"/>
+            </fileset>
+        </phplint>
+
+        <phplint>
+            <fileset dir="${phing.dir}/tests">
+                <include name="**/*.php"/>
+            </fileset>
+        </phplint>
     </target>
 
     <target name="unit">
