@@ -2,6 +2,10 @@
 
 This package provides an action for [Captain Hook](https://github.com/CaptainHookPhp/captainhook) which will reject a commit when author name or email does not match a regex defined in the `captainhook.json` configuration file. Use this action if you want to make sure that your private email address does not end up in your companies' git repositories.
 
+[![Build Status](https://travis-ci.org/bitExpert/captainhook-validateauthor.svg?branch=master)](https://travis-ci.org/bitExpert/captainhook-validateauthor)
+[![Coverage Status](https://coveralls.io/repos/github/bitExpert/captainhook-validateauthor/badge.svg?branch=master)](https://coveralls.io/github/bitExpert/captainhook-validateauthor?branch=master)
+
+
 ## Installation
 
 The preferred way of installing `bitexpert/captainhook-validateauthor` is through Composer.
