@@ -13,12 +13,7 @@
     },
     "pre-push": {
         "enabled": false,
-        "actions": [
-            {
-                "action": "./vendor/bin/phing security:check",
-                "options": []
-            }
-        ]
+        "actions": []
     },
     "pre-commit": {
         "enabled": true,
