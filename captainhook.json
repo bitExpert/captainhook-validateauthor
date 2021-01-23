@@ -12,7 +12,7 @@
         ]
     },
     "pre-push": {
-        "enabled": false,
+        "enabled": true,
         "actions": [
             {
                 "action": "./vendor/bin/phing analyse",
