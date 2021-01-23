@@ -92,6 +92,8 @@ class ValidateAuthorAction implements Action
             ->name($setting);
 
         $result = $this->runner->run($cmd, new MapSettings());
-        return key($result->getFormattedOutput());
+        /** @var array<String> $output */
+        $output =$result->getFormattedOutput();
+        return (string) key($output);
     }
 }
