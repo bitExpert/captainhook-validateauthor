@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
-<project name="captainhook-validateauthor" basedir="." default="security:check">
-    <import file="vendor/bitexpert/phing-securitychecker/build.xml" />
-
+<project name="captainhook-validateauthor" basedir="." default="sniff">
     <target name="sniff">
         <exec executable="./vendor/bin/phpcs"
               passthru="true"
