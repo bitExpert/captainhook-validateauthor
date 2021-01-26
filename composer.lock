@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48160ad9027962efc5e75df6fcf035e5",
+    "content-hash": "57c07a9c878ff4c7bad40955f757c0a9",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -4749,7 +4749,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3.0|^8.0.0"
+        "php": "^7.4.0|^8.0.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
