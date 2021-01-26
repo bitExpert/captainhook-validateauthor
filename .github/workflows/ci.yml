@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         operating-system: ['ubuntu-latest']
-        php-versions: ['7.3', '7.4', '8.0']
+        php-versions: ['7.4', '8.0']
         composer-prefer-lowest: [false]
         coveralls: [false]
         include:
@@ -27,7 +27,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
-          tools: composer:v1
+          tools: composer:v2
           coverage: xdebug
 
       - name: Install Composer dependencies
@@ -36,8 +36,10 @@ jobs:
       - name: Install lowest CaptainHookPHP version
         if: matrix.composer-prefer-lowest == true
         run: |
-          composer remove captainhook/captainhook captainhook/plugin-composer
-          composer require --prefer-lowest captainhook/captainhook captainhook/plugin-composer
+          composer remove --dev captainhook/plugin-composer
+          composer remove captainhook/captainhook
+          composer require --prefer-lowest captainhook/captainhook
+          composer require --prefer-lowest --dev captainhook/plugin-composer
 
       - name: Linting code
         run: ./vendor/bin/phing lint
@@ -55,6 +57,11 @@ jobs:
       - name: Unittests with coverage
         if: matrix.coveralls == true
         run: ./vendor/bin/phing unit-with-coverage
+
+      - name: Infection for added files
+        run: |
+          git fetch --depth=1 origin $GITHUB_BASE_REF
+          ./vendor/bin/infection -j2 --git-diff-filter=A --git-diff-base=origin/$GITHUB_BASE_REF --logger-github --ignore-msi-with-no-mutations --only-covered
 
       - name: Coveralls report
         if: matrix.coveralls == true
