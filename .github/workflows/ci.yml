@@ -36,8 +36,10 @@ jobs:
       - name: Install lowest CaptainHookPHP version
         if: matrix.composer-prefer-lowest == true
         run: |
-          composer remove captainhook/captainhook captainhook/plugin-composer
-          composer require --prefer-lowest captainhook/captainhook captainhook/plugin-composer
+          composer remove --dev captainhook/plugin-composer
+          composer remove captainhook/captainhook
+          composer require --prefer-lowest captainhook/captainhook
+          composer require --prefer-lowest --dev captainhook/plugin-composer
 
       - name: Linting code
         run: ./vendor/bin/phing lint
