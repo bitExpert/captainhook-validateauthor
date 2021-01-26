@@ -1,0 +1,23 @@
+{
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "logs": {
+        "text": "infection.log"
+    },
+    "mutators": {
+        "@default": true,
+        "ProtectedVisibility": {
+            "ignore": [
+                "bitExpert\\CaptainHook\\ValidateAuthor\\ValidateAuthorAction::getConfig"
+            ]
+        },
+        "CastString": {
+            "ignore": [
+                "bitExpert\\CaptainHook\\ValidateAuthor\\ValidateAuthorAction::getConfig"
+            ]
+        }
+    }
+}
