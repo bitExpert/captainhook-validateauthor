@@ -4,6 +4,7 @@ This package provides an action for [Captain Hook](https://github.com/CaptainHoo
 
 [![Build Status](https://github.com/bitExpert/captainhook-validateauthor/workflows/ci/badge.svg?branch=master)](https://github.com/bitExpert/captainhook-validateauthor/actions)
 [![Coverage Status](https://coveralls.io/repos/github/bitExpert/captainhook-validateauthor/badge.svg?branch=master)](https://coveralls.io/github/bitExpert/captainhook-validateauthor?branch=master)
+[![Infection MSI](https://badge.stryker-mutator.io/github.com/bitExpert/captainhook-validateauthor/master)](https://infection.github.io)
 
 
 ## Installation
