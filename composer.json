@@ -21,7 +21,7 @@
     "phing/phing": "^2.16",
     "phpstan/phpstan": "^0.12",
     "roave/security-advisories": "dev-latest",
-    "infection/infection": "^0.20.2"
+    "infection/infection": "^0.21.0"
   },
   "autoload": {
     "psr-4": {
