@@ -29,7 +29,7 @@ Add the following code to your `captainhook.json` configuration file:
         "action": "\\bitExpert\\CaptainHook\\ValidateAuthor\\ValidateAuthorAction",
         "options": {
             "name": "/^[A-Za-z0-09]+$/",
-            "email": "/@example.com$/",
+            "email": "/@example.com$/"
         }
       }
     ]
