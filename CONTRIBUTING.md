@@ -33,7 +33,7 @@ To run tests:
 
 ```console
 $ git clone git@github.com:bitExpert/captainhook-validateauthor.git
-$ cd disco
+$ cd captainhook-validateauthor
 ```
 
 2. Install dependencies via composer:
