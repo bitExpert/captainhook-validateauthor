@@ -28,7 +28,7 @@ class ValidateAuthorAction implements Action
     private $runner;
 
     /**
-     * Creates new {@link \bitExpert\CaptainHook\Validate\ValidateAuthorAction}.
+     * Creates new {@link \bitExpert\CaptainHook\ValidateAuthor\ValidateAuthorAction}.
      */
     public function __construct()
     {

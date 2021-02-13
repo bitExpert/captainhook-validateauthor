@@ -1,5 +1,7 @@
 parameters:
-    level: 7
+    level: max
+    fileExtensions:
+        - php
     paths:
-        - src
-
+        - src/bitExpert
+        - tests/bitExpert

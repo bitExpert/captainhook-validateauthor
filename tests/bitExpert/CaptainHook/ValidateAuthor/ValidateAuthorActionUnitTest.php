@@ -26,23 +26,23 @@ use SebastianFeldmann\Git\Repository;
 class ValidateAuthorActionUnitTest extends TestCase
 {
     /**
-     * @var Config|MockObject
+     * @var MockObject&Config
      */
     private $config;
     /**
-     * @var IO|MockObject
+     * @var MockObject&IO
      */
     private $io;
     /**
-     * @var Repository|MockObject
+     * @var MockObject&Repository
      */
     private $repository;
     /**
-     * @var Action|MockObject
+     * @var MockObject&Action
      */
     private $action;
     /**
-     * @var ValidateAuthorAction
+     * @var MockObject&ValidateAuthorAction
      */
     private $hook;
 
@@ -64,7 +64,7 @@ class ValidateAuthorActionUnitTest extends TestCase
     /**
      * @test
      */
-    public function missingConfigurationStopsExecution()
+    public function missingConfigurationStopsExecution(): void
     {
         $this->action->expects(self::once())
             ->method('getOptions')
@@ -79,7 +79,7 @@ class ValidateAuthorActionUnitTest extends TestCase
     /**
      * @test
      */
-    public function configuredNameRegexWillTriggerValidation()
+    public function configuredNameRegexWillTriggerValidation(): void
     {
         $this->action->expects(self::once())
             ->method('getOptions')
@@ -96,7 +96,7 @@ class ValidateAuthorActionUnitTest extends TestCase
     /**
      * @test
      */
-    public function nameValidationWillNotThrowExceptionIfMatches()
+    public function nameValidationWillNotThrowExceptionIfMatches(): void
     {
         $this->action->expects(self::once())
             ->method('getOptions')
@@ -113,9 +113,9 @@ class ValidateAuthorActionUnitTest extends TestCase
     /**
      * @test
      */
-    public function nameValidationWillThrowExceptionIfNotMatches()
+    public function nameValidationWillThrowExceptionIfNotMatches(): void
     {
-        self::expectException(RuntimeException::class);
+        $this->expectException(RuntimeException::class);
 
         $this->action->expects(self::once())
             ->method('getOptions')
@@ -132,7 +132,7 @@ class ValidateAuthorActionUnitTest extends TestCase
     /**
      * @test
      */
-    public function configuredEmailRegexWillTriggerValidation()
+    public function configuredEmailRegexWillTriggerValidation(): void
     {
         $this->action->expects(self::once())
             ->method('getOptions')
@@ -149,7 +149,7 @@ class ValidateAuthorActionUnitTest extends TestCase
     /**
      * @test
      */
-    public function emailValidationWillNotThrowExceptionIfMatches()
+    public function emailValidationWillNotThrowExceptionIfMatches(): void
     {
         $this->action->expects(self::once())
             ->method('getOptions')
@@ -166,9 +166,9 @@ class ValidateAuthorActionUnitTest extends TestCase
     /**
      * @test
      */
-    public function emailValidationWillThrowExceptionIfNotMatches()
+    public function emailValidationWillThrowExceptionIfNotMatches(): void
     {
-        self::expectException(RuntimeException::class);
+        $this->expectException(RuntimeException::class);
 
         $this->action->expects(self::once())
             ->method('getOptions')
