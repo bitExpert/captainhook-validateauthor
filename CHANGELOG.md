@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.4.0
+
+### Added
+
+- [#13](https://github.com/bitexpert/captainhook-validateauthor/pull/13) Add phly/keep-a-changelog dev dependency
+- [#12](https://github.com/bitexpert/captainhook-validateauthor/pull/12) Add phpstan/phpstan-strict-rules dependency
+- [#10](https://github.com/bitexpert/captainhook-validateauthor/pull/10) Bump infection/infection from 0.20.2 to 0.21.0
+- [#9](https://github.com/bitexpert/captainhook-validateauthor/pull/9) Add Infection
+- [#8](https://github.com/bitexpert/captainhook-validateauthor/pull/8) Bump phpstan/phpstan from 0.12.68 to 0.12.69
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- [#11](https://github.com/bitexpert/captainhook-validateauthor/pull/11) Replace Phing with Composer scripts
+
+### Fixed
+
+- Nothing.
+
 ## 0.3.0
 
 ### Added
