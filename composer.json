@@ -22,7 +22,8 @@
     "roave/security-advisories": "dev-latest",
     "infection/infection": "^0.21.0",
     "bitexpert/captainhook-infection": "^0.1.0",
-    "phpstan/phpstan-strict-rules": "^0.12.9"
+    "phpstan/phpstan-strict-rules": "^0.12.9",
+    "phly/keep-a-changelog": "^2.11"
   },
   "autoload": {
     "psr-4": {
