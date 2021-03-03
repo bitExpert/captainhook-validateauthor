@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b15b187d925e87e2cfa659310ac54c4",
+    "content-hash": "11d157acba640821e8af37e6a370880e",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -1124,16 +1124,16 @@
     "packages-dev": [
         {
             "name": "bitexpert/captainhook-infection",
-            "version": "v0.3.0",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bitExpert/captainhook-infection.git",
-                "reference": "3215482c8c6ced54236714a4b62821089788e8e9"
+                "reference": "dee08785259dd85bd3f8403339eb3a1dd67202c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bitExpert/captainhook-infection/zipball/3215482c8c6ced54236714a4b62821089788e8e9",
-                "reference": "3215482c8c6ced54236714a4b62821089788e8e9",
+                "url": "https://api.github.com/repos/bitExpert/captainhook-infection/zipball/dee08785259dd85bd3f8403339eb3a1dd67202c1",
+                "reference": "dee08785259dd85bd3f8403339eb3a1dd67202c1",
                 "shasum": ""
             },
             "require": {
@@ -1143,7 +1143,9 @@
             "require-dev": {
                 "captainhook/plugin-composer": "^5.2",
                 "infection/infection": "^0.21.0",
+                "phly/keep-a-changelog": "^2.11",
                 "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12.9",
                 "phpunit/phpunit": "^9.5",
                 "roave/security-advisories": "dev-latest",
                 "squizlabs/php_codesniffer": "^3.5"
@@ -1168,9 +1170,9 @@
             "description": "Captain Hook Plugin to run InfectionPHP only against the files of the current changeset",
             "support": {
                 "issues": "https://github.com/bitExpert/captainhook-infection/issues",
-                "source": "https://github.com/bitExpert/captainhook-infection/tree/v0.3.0"
+                "source": "https://github.com/bitExpert/captainhook-infection/tree/v0.4.0"
             },
-            "time": "2021-02-05T19:09:43+00:00"
+            "time": "2021-02-20T08:59:39+00:00"
         },
         {
             "name": "captainhook/plugin-composer",
