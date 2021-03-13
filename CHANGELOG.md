@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.5.0
+
+### Added
+
+- [#23](https://github.com/bitexpert/captainhook-validateauthor/pull/23) Bump phpstan/phpstan from 0.12.80 to 0.12.81
+
+- [#22](https://github.com/bitexpert/captainhook-validateauthor/pull/22) Bump captainhook/plugin-composer from 5.2.3 to 5.2.4
+
+- [#21](https://github.com/bitexpert/captainhook-validateauthor/pull/21) Bump captainhook/captainhook from 5.4.4 to 5.4.5
+
+- [#20](https://github.com/bitexpert/captainhook-validateauthor/pull/20) Bump infection/infection from 0.21.3 to 0.21.4
+
+- [#19](https://github.com/bitexpert/captainhook-validateauthor/pull/19) Bump bitexpert/captainhook-infection from 0.3.0 to 0.4.0
+
+- [#14](https://github.com/bitexpert/captainhook-validateauthor/pull/14) Upgrade Composer dependencies
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.4.0
 
 ### Added
