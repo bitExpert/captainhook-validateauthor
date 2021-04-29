@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: captainhook/captainhook
+    versions:
+    - 5.4.5
+  - dependency-name: infection/infection
+    versions:
+    - 0.21.1
