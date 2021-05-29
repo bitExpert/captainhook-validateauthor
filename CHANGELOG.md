@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.6.0
+
+### Added
+
+- [#51](https://github.com/bitexpert/captainhook-validateauthor/pull/51) Add license checker to CI workflow
+- [#50](https://github.com/bitexpert/captainhook-validateauthor/pull/50) Upgrade all dependencies
+- [#48](https://github.com/bitexpert/captainhook-validateauthor/pull/48) Bump captainhook/captainhook to 5.10.1
+- [#47](https://github.com/bitexpert/captainhook-validateauthor/pull/47) Bump captainhook/plugin-composer to 5.3.1
+- [#46](https://github.com/bitexpert/captainhook-validateauthor/pull/46) Bump phpstan/phpstan to 0.12.88
+- [#40](https://github.com/bitexpert/captainhook-validateauthor/pull/40) Upgrade to GitHub-native Dependabot
+- [#32](https://github.com/bitexpert/captainhook-validateauthor/pull/32) Bump squizlabs/php_codesniffer to 3.6.0
+- [#30](https://github.com/bitexpert/captainhook-validateauthor/pull/30) Bump infection/infection to 0.21.5
+- [#26](https://github.com/bitexpert/captainhook-validateauthor/pull/26) Bump phpunit/phpunit to 9.5.4
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.5.0
 
 ### Added
