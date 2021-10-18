@@ -54,7 +54,7 @@ class ValidateAuthorAction implements Action
 
         if (isset($options['name'])) {
             $userName = $this->getConfig($repository, 'user.name');
-            if (!preg_match($options['name'], $userName)) {
+            if (!(bool)preg_match($options['name'], $userName)) {
                 throw new \RuntimeException(
                     sprintf(
                         'Git user name "%s" does not match regex "%s" in captainhook.json. Check your git config!',
@@ -67,7 +67,7 @@ class ValidateAuthorAction implements Action
 
         if (isset($options['email'])) {
             $userEmail = $this->getConfig($repository, 'user.email');
-            if (!preg_match($options['email'], $userEmail)) {
+            if (!(bool)preg_match($options['email'], $userEmail)) {
                 throw new \RuntimeException(
                     sprintf(
                         'Git user email "%s" does not match regex "%s" in captainhook.json. Check your git config!',
