@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.7.0
+
+### Added
+- [#54](https://github.com/bitexpert/captainhook-validateauthor/pull/54) Allow the plugin to run with PHP 8.1
+- [#53](https://github.com/bitexpert/captainhook-validateauthor/pull/53) Upgrade Composer dependencies
+- [#52](https://github.com/bitexpert/captainhook-validateauthor/pull/52) Add PHPStan PHPUnit extension
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.6.0
 
 ### Added
