@@ -11,16 +11,11 @@ jobs:
     strategy:
       matrix:
         operating-system: ['ubuntu-latest']
-        php-versions: ['7.4', '8.0']
-        composer-prefer-lowest: [false]
+        php-versions: ['7.4', '8.0', '8.1']
         coveralls: [false]
         include:
           - operating-system: 'ubuntu-latest'
-            php-versions: '7.4'
-            composer-prefer-lowest: true
-            coveralls: false
-          - operating-system: 'ubuntu-latest'
-            php-versions: '7.4'
+            php-versions: '8.1'
             composer-prefer-lowest: false
             coveralls: true
     steps:
@@ -34,23 +29,8 @@ jobs:
           tools: composer:v2
           coverage: xdebug
 
-      - name: Install Composer dependencies (PHP 7.4)
-        if: matrix.php-versions == '7.4'
+      - name: Install Composer dependencies
         run: composer install
-
-      - name: Install Composer dependencies (PHP 8.0)
-        if: matrix.php-versions == '8.0'
-        run: |
-          composer update ocramius/package-versions
-          composer install
-
-      - name: Install lowest CaptainHookPHP version
-        if: matrix.composer-prefer-lowest == true
-        run: |
-          composer remove --dev captainhook/plugin-composer bitexpert/captainhook-infection
-          composer remove captainhook/captainhook
-          composer require --prefer-lowest captainhook/captainhook
-          composer require --prefer-lowest --dev captainhook/plugin-composer bitexpert/captainhook-infection
 
       - name: Composer license check
         run: composer check-license
