@@ -29,15 +29,8 @@ jobs:
           tools: composer:v2
           coverage: xdebug
 
-      - name: Install Composer dependencies (PHP 7.4)
-        if: matrix.php-versions == '7.4'
+      - name: Install Composer dependencies
         run: composer install
-
-      - name: Install Composer dependencies (PHP 8.0)
-        if: matrix.php-versions == '8.0'
-        run: |
-          composer update ocramius/package-versions
-          composer install
 
       - name: Composer license check
         run: composer check-license
