@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.8.0
+
+### Added
+- [#56](https://github.com/bitexpert/captainhook-validateauthor/pull/56) PHP 8.2 compatibility
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.7.0
 
 ### Added
