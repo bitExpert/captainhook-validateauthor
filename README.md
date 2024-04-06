@@ -4,7 +4,7 @@ This package provides an action for [Captain Hook](https://github.com/CaptainHoo
 
 [![Build Status](https://github.com/bitExpert/captainhook-validateauthor/workflows/ci/badge.svg?branch=master)](https://github.com/bitExpert/captainhook-validateauthor/actions)
 [![Coverage Status](https://coveralls.io/repos/github/bitExpert/captainhook-validateauthor/badge.svg?branch=master)](https://coveralls.io/github/bitExpert/captainhook-validateauthor?branch=master)
-![Mastodon Follow](https://img.shields.io/mastodon/follow/109408681246972700?domain=https://rheinneckar.social)
+[![Mastodon Follow](https://img.shields.io/mastodon/follow/109408681246972700?domain=https://rheinneckar.social)](https://rheinneckar.social/@bitexpert)
 
 
 ## Installation
