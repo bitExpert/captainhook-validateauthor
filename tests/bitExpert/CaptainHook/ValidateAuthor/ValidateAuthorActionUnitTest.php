@@ -58,7 +58,7 @@ class ValidateAuthorActionUnitTest extends TestCase
         $this->io = $this->createMock(IO::class);
         $this->repository = $this->createMock(Repository::class);
         $this->action = $this->createMock(Action::class);
-        $this->hook = $this->createPartialMock(ValidateAuthorAction::class, ['getConfig']);
+        $this->hook = $this->createPartialMock(ValidateAuthorAction::class, ['getGitAuthorIdentity']);
     }
 
     /**
@@ -71,7 +71,7 @@ class ValidateAuthorActionUnitTest extends TestCase
             ->willReturn(new Options([]));
 
         $this->hook->expects(self::never())
-            ->method('getConfig');
+            ->method('getGitAuthorIdentity');
 
         $this->hook->execute($this->config, $this->io, $this->repository, $this->action);
     }
@@ -86,9 +86,9 @@ class ValidateAuthorActionUnitTest extends TestCase
             ->willReturn(new Options(['name' => '/Some author name/']));
 
         $this->hook->expects(self::once())
-            ->method('getConfig')
-            ->with($this->repository, 'user.name')
-            ->willReturn('Some author name');
+            ->method('getGitAuthorIdentity')
+            ->with($this->repository)
+            ->willReturn(new GitIdentity('Some author name', 'test@test.loc'));
 
         $this->hook->execute($this->config, $this->io, $this->repository, $this->action);
     }
@@ -103,9 +103,9 @@ class ValidateAuthorActionUnitTest extends TestCase
             ->willReturn(new Options(['name' => '/[A-F]+/']));
 
         $this->hook->expects(self::once())
-            ->method('getConfig')
-            ->with($this->repository, 'user.name')
-            ->willReturn('ABCDEF');
+            ->method('getGitAuthorIdentity')
+            ->with($this->repository)
+            ->willReturn(new GitIdentity('ABCDEF', 'test@test.loc'));
 
         $this->hook->execute($this->config, $this->io, $this->repository, $this->action);
     }
@@ -122,9 +122,9 @@ class ValidateAuthorActionUnitTest extends TestCase
             ->willReturn(new Options(['name' => '/^[1-9]+$/']));
 
         $this->hook->expects(self::once())
-            ->method('getConfig')
-            ->with($this->repository, 'user.name')
-            ->willReturn('ABCDEF');
+            ->method('getGitAuthorIdentity')
+            ->with($this->repository)
+            ->willReturn(new GitIdentity('ABCDEF', 'test@test.loc'));
 
         $this->hook->execute($this->config, $this->io, $this->repository, $this->action);
     }
@@ -139,9 +139,9 @@ class ValidateAuthorActionUnitTest extends TestCase
             ->willReturn(new Options(['email' => '/test@test.loc/']));
 
         $this->hook->expects(self::once())
-            ->method('getConfig')
-            ->with($this->repository, 'user.email')
-            ->willReturn('test@test.loc');
+            ->method('getGitAuthorIdentity')
+            ->with($this->repository)
+            ->willReturn(new GitIdentity('Some author name', 'test@test.loc'));
 
         $this->hook->execute($this->config, $this->io, $this->repository, $this->action);
     }
@@ -156,9 +156,9 @@ class ValidateAuthorActionUnitTest extends TestCase
             ->willReturn(new Options(['email' => '/@/']));
 
         $this->hook->expects(self::once())
-            ->method('getConfig')
-            ->with($this->repository, 'user.email')
-            ->willReturn('test@test.loc');
+            ->method('getGitAuthorIdentity')
+            ->with($this->repository)
+            ->willReturn(new GitIdentity('Some author name', 'test@test.loc'));
 
         $this->hook->execute($this->config, $this->io, $this->repository, $this->action);
     }
@@ -175,9 +175,9 @@ class ValidateAuthorActionUnitTest extends TestCase
             ->willReturn(new Options(['email' => '/^[1-9]+$/']));
 
         $this->hook->expects(self::once())
-            ->method('getConfig')
-            ->with($this->repository, 'user.email')
-            ->willReturn('test@test.loc');
+            ->method('getGitAuthorIdentity')
+            ->with($this->repository)
+            ->willReturn(new GitIdentity('Some author name', 'test@test.loc'));
 
         $this->hook->execute($this->config, $this->io, $this->repository, $this->action);
     }
