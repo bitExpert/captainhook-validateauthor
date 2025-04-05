@@ -14,25 +14,15 @@ namespace bitExpert\CaptainHook\ValidateAuthor;
 use CaptainHook\App\Config;
 use CaptainHook\App\Console\IO;
 use CaptainHook\App\Hook\Action;
-use SebastianFeldmann\Cli\Command\Runner\Simple;
-use SebastianFeldmann\Cli\Processor\ProcOpen as Processor;
-use SebastianFeldmann\Git\Command\Config\Get;
-use SebastianFeldmann\Git\Command\Config\ListSettings\MapSettings;
 use SebastianFeldmann\Git\Repository;
 
 class ValidateAuthorAction implements Action
 {
     /**
-     * @var Simple
-     */
-    private $runner;
-
-    /**
      * Creates new {@link \bitExpert\CaptainHook\ValidateAuthor\ValidateAuthorAction}.
      */
     public function __construct()
     {
-        $this->runner = new Simple(new Processor());
     }
 
     /**
@@ -52,8 +42,10 @@ class ValidateAuthorAction implements Action
             return;
         }
 
+        $authorIdentity = $this->getGitAuthorIdentity($repository);
+
         if (isset($options['name'])) {
-            $userName = $this->getConfig($repository, 'user.name');
+            $userName = $authorIdentity->getName();
             if (!(bool)preg_match($options['name'], $userName)) {
                 throw new \RuntimeException(
                     sprintf(
@@ -66,7 +58,7 @@ class ValidateAuthorAction implements Action
         }
 
         if (isset($options['email'])) {
-            $userEmail = $this->getConfig($repository, 'user.email');
+            $userEmail = $authorIdentity->getEmail();
             if (!(bool)preg_match($options['email'], $userEmail)) {
                 throw new \RuntimeException(
                     sprintf(
@@ -79,21 +71,9 @@ class ValidateAuthorAction implements Action
         }
     }
 
-    /**
-     * Returns the given config $setting for given $repository.
-     *
-     * @param Repository $repository
-     * @param string $setting
-     * @return string
-     */
-    protected function getConfig(Repository $repository, string $setting): string
+    protected function getGitAuthorIdentity(Repository $repository): GitIdentity
     {
-        $cmd = (new Get($repository->getRoot()))
-            ->name($setting);
-
-        $result = $this->runner->run($cmd, new MapSettings());
-        /** @var array<String> $output */
-        $output =$result->getFormattedOutput();
-        return (string) key($output);
+        $gitAuthorIdentString = $repository->getConfigOperator()->getVar('GIT_AUTHOR_IDENT');
+        return GitIdentity::fromIdentString($gitAuthorIdentString);
     }
 }
