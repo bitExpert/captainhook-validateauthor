@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.9.0
+
+### Added
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- [#58](https://github.com/bitexpert/captainhook-validateauthor/pull/58) Derive author from git var GIT_AUTHOR_IDENT
+
 ## 0.8.0
 
 ### Added
